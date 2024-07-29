@@ -1,0 +1,21 @@
+<mat-toolbar class="custom-toolbar">
+  <span class="spacer"></span>
+  <button class="btn btn-outline-warning"  routerLink="/welcome" >Home</button>
+  <span class="spacer"></span>
+  <button class="btn btn-outline-warning" routerLink="/terms">Terms</button>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <button class="blue-button" (click)="navigateTo('impressum')">Impressum</button>
+    <button class="blue-button" (mouseenter)="showContactEmail = true" (mouseleave)="showContactEmail = false">
+      Contact
+      <span *ngIf="showContactEmail" class="contact-email">service&#64;spendings.ch</span>
+    </button>
+    <button class="blue-button" (click)="navigateTo('agb')">AGB</button>
+    <p style="color:white">&copy; Spendings {{ currentYear }}</p>
+  </div>
+</footer>
