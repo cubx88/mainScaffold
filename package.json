@@ -1,6 +1,6 @@
 {
-  "name": "password-reset",
-  "version": "1.0.3",
+  "name": "angular_osf",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng build --configuration=production --aot && ng serve --port 8088 --host 192.168.0.88 --disable-host-check",
@@ -22,7 +22,6 @@
     "@types/realm": "^1.13.0",
     "bootstrap": "^4.6.2",
     "ngx-toastr": "^18.0.0",
-    "realm": "^12.6.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

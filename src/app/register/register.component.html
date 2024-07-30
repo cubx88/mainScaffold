@@ -1,0 +1,113 @@
+<div class="custom-container">
+    <div class="register-form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="centered-form">
+        <h2 class="blue-heading">Register</h2>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input
+              matInput
+              formControlName="fullname"
+              placeholder="Enter your full name"
+              [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+            />
+            <mat-error *ngIf="submitted && f['fullname'].errors">
+              <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              formControlName="username"
+              placeholder="Enter your username"
+              [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+            />
+            <mat-error *ngIf="submitted && f['username'].errors">
+              <div *ngIf="f['username'].errors['required']">Username is required</div>
+              <div *ngIf="f['username'].errors['minlength']">Username must be at least 6 characters</div>
+              <div *ngIf="f['username'].errors['maxlength']">Username must not exceed 20 characters</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Enter your email"
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+            />
+            <mat-error *ngIf="submitted && f['email'].errors">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+              <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              placeholder="Enter your password"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility('password')">
+              <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="submitted && f['password'].errors">
+              <div *ngIf="f['password'].errors['required']">Password is required</div>
+              <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
+              <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 40 characters</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              formControlName="confirmPassword"
+              placeholder="Confirm your password"
+              [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+            />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility('confirmPassword')">
+              <mat-icon>{{ showConfirmPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="submitted && f['confirmPassword'].errors">
+              <div *ngIf="f['confirmPassword'].errors['required']">Confirm Password is required</div>
+              <div *ngIf="f['confirmPassword'].errors['matching']">Confirm Password does not match</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-checkbox formControlName="acceptTerms">
+            I have read and agree to the Terms
+          </mat-checkbox>
+          <mat-error *ngIf="submitted && f['acceptTerms'].errors">
+            <div *ngIf="f['acceptTerms'].errors['required']">Accept Terms is required</div>
+          </mat-error>
+        </div>
+  
+        <div class="form-group">
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit" class="btnSubmit">Submit</button>
+            <button mat-raised-button color="warn" type="button" (click)="onReset()" class="btnReset">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

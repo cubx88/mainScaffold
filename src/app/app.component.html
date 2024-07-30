@@ -1,21 +1,59 @@
-<mat-toolbar class="custom-toolbar">
-  <span class="spacer"></span>
-  <button class="btn btn-outline-warning"  routerLink="/welcome" >Home</button>
-  <span class="spacer"></span>
-  <button class="btn btn-outline-warning" routerLink="/terms">Terms</button>
-  <span class="spacer"></span>
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <nav>
+      <a class="startBtn" routerLink="/login">
+        <mat-icon>login</mat-icon> Start
+      </a>
+      <a class="startBtn" routerLink="/welcome">
+        <mat-icon>home</mat-icon> Home
+      </a>
+      <a class="startBtn" routerLink="/terms">
+        <mat-icon>description</mat-icon> Terms
+      </a>
+      <a class="startBtn" routerLink="/register">
+        <mat-icon>person_add</mat-icon> Register
+      </a>
+    </nav>
+  </mat-sidenav>
 
-<router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <mat-toolbar class="custom-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <a class="startBtn" routerLink="/login">
+        <mat-icon>login</mat-icon> Start
+      </a>
+      <span class="spacer"></span>
+      <a class="startBtn" routerLink="/welcome">
+        <mat-icon>home</mat-icon> Home
+      </a>
+      <span class="spacer"></span>
+      <a class="startBtn" routerLink="/terms">
+        <mat-icon>description</mat-icon> Terms
+      </a>
+      <span class="spacer"></span>
+      <a class="startBtn" routerLink="/register">
+        <mat-icon>person_add</mat-icon> Register
+      </a>
+    </mat-toolbar>
 
-<footer class="footer">
-  <div class="container footer-content">
-    <button class="blue-button" (click)="navigateTo('impressum')">Impressum</button>
-    <button class="blue-button" (mouseenter)="showContactEmail = true" (mouseleave)="showContactEmail = false">
-      Contact
-      <span *ngIf="showContactEmail" class="contact-email">service&#64;spendings.ch</span>
-    </button>
-    <button class="blue-button" (click)="navigateTo('agb')">AGB</button>
-    <p style="color:white">&copy; Spendings {{ currentYear }}</p>
-  </div>
-</footer>
+    <router-outlet></router-outlet>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <button mat-button color="primary" (click)="navigateTo('impressum')">
+          <mat-icon>info</mat-icon> Impressum
+        </button>
+        <button mat-button color="primary" (mouseenter)="showContactEmail = true" (mouseleave)="showContactEmail = false">
+          <mat-icon>mail</mat-icon> Contact
+        </button>
+        <button mat-button color="primary" (click)="navigateTo('agb')">
+          <mat-icon>assignment</mat-icon> AGB
+        </button>
+        <p style="color:white">&copy; FrenzelTech {{ currentYear }}</p>
+        </div>
+        </footer>
+  </mat-sidenav-content>
+  </mat-sidenav-container>

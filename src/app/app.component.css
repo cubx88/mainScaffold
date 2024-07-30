@@ -1,6 +1,29 @@
-.footer {
-    background-color: rgba(29, 28, 29, 0.944);
-    padding: 20px 0;
+.sidenav-container {
+    height: 100vh;
+    /* Use full viewport height */
+
+    /* Flex container for side nav and content */
+}
+
+mat-sidenav {
+    width: 220px;
+    background-color: rgb(237, 191, 5);
+}
+
+.custom-toolbar {
+    background-color: rgba(9, 95, 208);
+    position: sticky;
+    top: 0;
+    /* Stick to the top */
+    z-index: 1000;
+    /* High z-index to stay above other elements */
+    height: 80px;
+    /* Height of the toolbar */
+    display: flex;
+    justify-content: space-between;
+    /* Space between elements */
+    align-items: center;
+    /* Center items vertically */
 }
 
 .container {
@@ -12,48 +35,43 @@
     gap: 10px;
 }
 
-.footer-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.blue-button {
-    color: white;
-    background-color: rgba(9, 95, 208);
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.blue-button:hover {
-    background-color:  rgb(237, 191, 5);
-}
-
 .contact-email {
     display: block;
     margin-top: 5px;
 }
 
-.custom-toolbar {
-    display: flex;
-    justify-content: space-between;
-}
-
 .spacer {
     flex: 1 1 auto;
+    /* This will push elements to the sides */
 }
 
-.custom-toolbar {
-    background-color: rgba(9, 95, 208);
-    /* Blue background color */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 80px;
-    /* Increase the height to make the toolbar thicker */
+.startBtn {
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 16px;
+    text-decoration: none;
+    /* Remove underline */
+    color: white;
+    font-size: 15px;
+}
+
+.startBtn mat-icon {
+    margin-right: 8px;
+    /* Space between icon and text */
+}
+
+.startBtn:hover {
+    color: gold;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: rgba(29, 28, 29, 0.944);
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

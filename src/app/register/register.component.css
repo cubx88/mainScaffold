@@ -7,6 +7,21 @@
     padding-bottom: 50px;
 }
 
+.full-width {
+    width: 80%;
+}
+
+mat-form-field {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+mat-error {
+    margin-top: -12px;
+    color: red;
+    font-size: 12px;
+}
+
 .register-form {
     max-width: 700px;
     min-width: 100px;
@@ -15,7 +30,8 @@
 
 .centered-form {
     text-align: center;
-    background:  rgba(9, 95, 208);
+    width: 500px;
+    background: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,36 +41,25 @@
 
 .blue-heading {
     padding: 30px;
-    color:  rgb(237, 191, 5);
+    color: rgb(237, 191, 5);
 }
 
 .password-input-container {
     position: relative;
 }
 
-.password-input {
-    padding-right: 30px;
-}
-
-.invalid-feedback {
-    position: absolute;
-    top: calc(100% - 8px);
-    left: 0;
-    width: 100%;
-    padding-top: 5px;
-}
-
 .button-container {
     margin-top: 30px;
 }
 
-.fa {
-    position: absolute;
-    top: 50%;
-    right: 35px;
-    transform: translateY(-50%);
-    cursor: pointer;
+.btnSubmit {
+    margin-right: 10px;
 }
+
+.btnReset {
+    margin-left: 10px;
+}
+
 
 @media (max-width: 1024px) {
     .register-form {

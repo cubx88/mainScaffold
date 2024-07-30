@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-// import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-// import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 
@@ -12,8 +13,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  //imports: [RouterOutlet, RouterModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatMenuModule, CommonModule],
-  imports: [RouterOutlet, RouterModule, MatToolbarModule, CommonModule],
+  imports: [RouterOutlet, RouterModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatMenuModule, CommonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

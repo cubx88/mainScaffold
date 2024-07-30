@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "password-reset": {
+    "angular-osf": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/password-reset",
+            "outputPath": "dist/angular-osf",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "password-reset:build:production"
+              "buildTarget": "angular-osf:build:production"
             },
             "development": {
-              "buildTarget": "password-reset:build:development"
+              "buildTarget": "angular-osf:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "password-reset:build"
+            "buildTarget": "angular-osf:build"
           }
         },
         "test": {
