@@ -1,8 +1,5 @@
 .sidenav-container {
     height: 100vh;
-    /* Use full viewport height */
-
-    /* Flex container for side nav and content */
 }
 
 mat-sidenav {
@@ -10,18 +7,27 @@ mat-sidenav {
     background-color: rgb(237, 191, 5);
 }
 
+.languageDropDown{
+    width: 100px;
+    color:  rgba(9, 95, 208)!important;
+    background-color: rgba(9, 95, 208)!important;
+}
+
+.flag {
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
 .custom-toolbar {
     background-color: rgba(9, 95, 208);
     position: sticky;
     top: 0;
-    /* Stick to the top */
     z-index: 1000;
-    /* High z-index to stay above other elements */
     height: 80px;
-    /* Height of the toolbar */
     display: flex;
     justify-content: space-between;
-    /* Space between elements */
     align-items: center;
     /* Center items vertically */
 }
@@ -57,7 +63,6 @@ mat-sidenav {
 
 .startBtn mat-icon {
     margin-right: 8px;
-    /* Space between icon and text */
 }
 
 .startBtn:hover {
