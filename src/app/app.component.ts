@@ -26,9 +26,12 @@ export class AppComponent {
 
   selectedLanguage: string = 'en';
   languages = [
-    { code: 'en', label: 'English', flag: 'assets/images/en.png' },
-    { code: 'fr', label: 'Français', flag: 'assets/images/fr.png' },
-    { code: 'de', label: 'Deutsch', flag: 'assets/images/de.png' },
+    //{ code: 'us', label: 'English', flag: 'assets/i18n/images/us.svg' },
+    //{ code: 'fr', label: 'Français', flag: 'assets/i18n/images/fr.svg' },
+    { code: 'de', label: 'Deutsch', flag: 'assets/i18n/images/de.svg' },
+    { code: 'nz', label: 'New Zealand', flag: 'assets/i18n/images/nz.svg' },
+    { code: 'br', label: 'Brazil', flag: 'assets/i18n/images/br.svg' },
+    { code: 'es', label: 'Espanol', flag: 'assets/i18n/images/es.svg' },
   ];
   constructor(private router: Router, private translate: TranslateService) {
     this.translate.setDefaultLang('en');

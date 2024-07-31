@@ -1,5 +1,5 @@
 {
-    "HELLO": "Hello",
-    "WELCOME": "Home"
-  }
-  
+  "WELCOME": "Home",
+  "Registration": "Register",
+  "RegistInpName":"Enter your full name"
+}

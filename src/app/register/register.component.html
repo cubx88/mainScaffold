@@ -1,7 +1,7 @@
 <div class="custom-container">
     <div class="register-form">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="centered-form">
-        <h2 class="blue-heading">Register</h2>
+        <h2 class="blue-heading">{{ 'Registration' | translate }}</h2>
   
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
@@ -9,7 +9,7 @@
             <input
               matInput
               formControlName="fullname"
-              placeholder="Enter your full name"
+              [placeholder]=" 'RegistInpName' | translate"
               [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
             />
             <mat-error *ngIf="submitted && f['fullname'].errors">
