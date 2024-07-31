@@ -5,106 +5,121 @@
   
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Full Name</mat-label>
+            <mat-label>{{ 'RegistInpSurNamelbl' | translate }}</mat-label>
             <input
               matInput
-              formControlName="fullname"
-              [placeholder]=" 'RegistInpName' | translate"
-              [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+              formControlName="lastname"
+              [placeholder]="'RegistInpNameDesc' | translate"
+              [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
             />
-            <mat-error *ngIf="submitted && f['fullname'].errors">
-              <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+            <mat-error *ngIf="submitted && f['lastname'].errors">
+              <div *ngIf="f['lastname'].errors['required']">{{ 'RegistInpSurNameVal' | translate }}</div>
             </mat-error>
           </mat-form-field>
         </div>
-  
+        
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Username</mat-label>
+            <mat-label>{{ 'RegistInpNamelbl' | translate }}</mat-label>
+            <input
+              matInput
+              formControlName="firstname"
+              [placeholder]="'RegistInpNameDesc2' | translate"
+              [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
+            />
+            <mat-error *ngIf="submitted && f['firstname'].errors">
+              <div *ngIf="f['firstname'].errors['required']">{{ 'RegistInpFirstNameVal' | translate }}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ 'RegistInpUserNamelbl' | translate }}</mat-label>
             <input
               matInput
               formControlName="username"
-              placeholder="Enter your username"
+              [placeholder]="'RegistInpUserNameDesc' | translate"
               [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
             />
             <mat-error *ngIf="submitted && f['username'].errors">
-              <div *ngIf="f['username'].errors['required']">Username is required</div>
-              <div *ngIf="f['username'].errors['minlength']">Username must be at least 6 characters</div>
-              <div *ngIf="f['username'].errors['maxlength']">Username must not exceed 20 characters</div>
+              <div *ngIf="f['username'].errors['required']">{{ 'RegistInpUserNameVal' | translate }}</div>
+              <div *ngIf="f['username'].errors['minlength']">{{ 'RegistInpUserNameVal2' | translate }}</div>
+              <div *ngIf="f['username'].errors['maxlength']">{{ 'RegistInpUserNameVal3' | translate }}</div>
             </mat-error>
           </mat-form-field>
         </div>
   
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Email</mat-label>
+            <mat-label>{{ 'RegistEmaillbl' | translate }}</mat-label>
             <input
               matInput
               formControlName="email"
-              placeholder="Enter your email"
+              [placeholder]="'RegistEmailDesc' | translate"
               [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
             />
             <mat-error *ngIf="submitted && f['email'].errors">
-              <div *ngIf="f['email'].errors['required']">Email is required</div>
-              <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              <div *ngIf="f['email'].errors['required']">{{ 'RegistEmailVal' | translate }}</div>
+              <div *ngIf="f['email'].errors['email']">{{ 'RegistEmailVal2' | translate }}</div>
             </mat-error>
           </mat-form-field>
         </div>
   
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Password</mat-label>
+            <mat-label>{{ 'RegistPasswordlbl' | translate }}</mat-label>
             <input
               matInput
               [type]="showPassword ? 'text' : 'password'"
               formControlName="password"
-              placeholder="Enter your password"
+              [placeholder]="'RegistPasswordDesc' | translate"
               [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
             />
             <button mat-icon-button matSuffix (click)="togglePasswordVisibility('password')">
               <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
             </button>
             <mat-error *ngIf="submitted && f['password'].errors">
-              <div *ngIf="f['password'].errors['required']">Password is required</div>
-              <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
-              <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 40 characters</div>
+              <div *ngIf="f['password'].errors['required']">{{ 'RegistPasswordVal' | translate }}</div>
+              <div *ngIf="f['password'].errors['minlength']">{{ 'RegistPasswordVal2' | translate }}</div>
+              <div *ngIf="f['password'].errors['maxlength']">{{ 'RegistPasswordVal3' | translate }}</div>
             </mat-error>
           </mat-form-field>
         </div>
   
         <div class="form-group">
           <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Confirm Password</mat-label>
+            <mat-label>{{ 'RegistConfPasswordlbl' | translate }}</mat-label>
             <input
               matInput
               [type]="showConfirmPassword ? 'text' : 'password'"
               formControlName="confirmPassword"
-              placeholder="Confirm your password"
+              [placeholder]="'RegistConfPasswordDesc' | translate"
               [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
             />
             <button mat-icon-button matSuffix (click)="togglePasswordVisibility('confirmPassword')">
               <mat-icon>{{ showConfirmPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
             </button>
             <mat-error *ngIf="submitted && f['confirmPassword'].errors">
-              <div *ngIf="f['confirmPassword'].errors['required']">Confirm Password is required</div>
-              <div *ngIf="f['confirmPassword'].errors['matching']">Confirm Password does not match</div>
+              <div *ngIf="f['confirmPassword'].errors['required']">{{ 'RegistConfPasswordVal' | translate }}</div>
+              <div *ngIf="f['confirmPassword'].errors['matching']">{{ 'RegistConfPasswordVal2' | translate }}</div>
             </mat-error>
           </mat-form-field>
         </div>
   
         <div class="form-group">
           <mat-checkbox formControlName="acceptTerms">
-            I have read and agree to the Terms
+            {{ 'RegistTermlbl' | translate }}
           </mat-checkbox>
           <mat-error *ngIf="submitted && f['acceptTerms'].errors">
-            <div *ngIf="f['acceptTerms'].errors['required']">Accept Terms is required</div>
+            <div *ngIf="f['acceptTerms'].errors['required']">{{ 'RegistTermVal' | translate }}</div>
           </mat-error>
         </div>
   
         <div class="form-group">
           <div class="button-container">
-            <button mat-raised-button color="primary" type="submit" class="btnSubmit">Submit</button>
-            <button mat-raised-button color="warn" type="button" (click)="onReset()" class="btnReset">Reset</button>
+            <button mat-raised-button color="primary" type="submit" class="btnSubmit">{{ 'RegistSubmitBtn' | translate }}</button>
+            <button mat-raised-button color="warn" type="button" (click)="onReset()" class="btnReset">{{ 'RegistResetBtn' | translate }}</button>
           </div>
         </div>
       </form>
