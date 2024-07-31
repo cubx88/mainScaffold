@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<!-- <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" closed>
     <nav>
       <a class="startBtn" routerLink="/login">
@@ -32,7 +32,7 @@
       </a>
       <mat-select class ="languageDropDown" [(value)]="selectedLanguage" (selectionChange)="switchLanguage($event.value)">
         <mat-option *ngFor="let language of languages" [value]="language.code">
-          <img [src]="language.flag" class="flag" alt="{{ language.label }}" /> 
+          <img [src]="language.flag" class="flag"/>{{ language.code }} 
         </mat-option>
       </mat-select>
     </mat-toolbar>
@@ -54,4 +54,64 @@
         </div>
         </footer>
   </mat-sidenav-content>
+  </mat-sidenav-container> -->
+
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" closed>
+      <nav>
+        <a class="startBtn" routerLink="/login">
+          <mat-icon>login</mat-icon> Start
+        </a>
+        <a class="startBtn" routerLink="/welcome">
+          <mat-icon>home</mat-icon> {{ 'WELCOME' | translate }}
+        </a>
+        <a class="startBtn" routerLink="/terms">
+          <mat-icon>description</mat-icon> Terms
+        </a>
+        <a class="startBtn" routerLink="/register">
+          <mat-icon>person_add</mat-icon> Register
+        </a>
+      </nav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar class="custom-toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <a class="startBtn" routerLink="/welcome">{{ 'WELCOME' | translate }}
+        </a>
+        <span class="spacer"></span>
+        <a class="startBtn" routerLink="/terms">Terms
+        </a>
+        <span class="spacer"></span>
+        <a class="startBtn" routerLink="/register">Register
+        </a>
+        <mat-select class="languageDropDown" [(value)]="selectedLanguage" (selectionChange)="switchLanguage($event.value)">
+          <mat-option *ngFor="let language of languages" [value]="language.code">
+            <img [src]="language.flag" class="flag" />{{ language.code }}
+          </mat-option>
+        </mat-select>
+      </mat-toolbar>
+  
+      <router-outlet></router-outlet>
+  
+      <footer class="footer">
+        <div class="container footer-content">
+          <button mat-button color="primary" (click)="openImpressumDialog()">
+            <mat-icon>info</mat-icon> Impressum
+          </button>
+          <button mat-button color="primary" (mouseenter)="showContactEmail = true" (mouseleave)="showContactEmail = false">
+            <mat-icon>mail</mat-icon> Contact
+          </button>
+          <button mat-button color="primary" (click)="openAgbDialog()">
+            <mat-icon>assignment</mat-icon> AGB
+          </button>
+          <p style="color:white">&copy; FrenzelTech {{ currentYear }}</p>
+        </div>
+      </footer>
+    </mat-sidenav-content>
   </mat-sidenav-container>
+  
