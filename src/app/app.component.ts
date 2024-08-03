@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,13 +26,15 @@ import { ViewportScroller } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   currentYear: number = new Date().getFullYear();
   showContactEmail: boolean = false;
   selectedLanguage: string = 'en';
+  currentFlag: string = 'assets/i18n/images/nz.svg';
   languages = [
     { code: 'de', label: 'Deutsch', flag: 'assets/i18n/images/de.svg' },
-    { code: 'nz', label: 'New Zealand', flag: 'assets/i18n/images/nz.svg' },
+    { code: 'en', label: 'New Zealand', flag: 'assets/i18n/images/nz.svg' },
     { code: 'br', label: 'Brazil', flag: 'assets/i18n/images/br.svg' },
     { code: 'es', label: 'Espanol', flag: 'assets/i18n/images/es.svg' },
   ];
@@ -43,7 +45,8 @@ export class AppComponent implements OnInit {
     private router: Router,
     private translate: TranslateService,
     public dialog: MatDialog,
-    private viewPortScroller: ViewportScroller
+    private viewPortScroller: ViewportScroller,
+    private cdr: ChangeDetectorRef,
   ) {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
@@ -62,6 +65,8 @@ export class AppComponent implements OnInit {
   }
 
   switchLanguage(language: string) {
+    this.selectedLanguage = language;
+    this.updateCurrentFlag(language);
     this.translate.use(language);
   }
 
@@ -79,5 +84,10 @@ export class AppComponent implements OnInit {
 
   closeSidenav() {
     this.sidenav?.close();
+  }
+
+  updateCurrentFlag(language: string) {
+    const selectedLang = this.languages.find(lang => lang.code === language);
+    this.currentFlag = selectedLang ? selectedLang.flag : '';
   }
 }

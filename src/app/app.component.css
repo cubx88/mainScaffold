@@ -1,6 +1,6 @@
 .sidenav-container {
     display: flex;
-        height: 100%;
+    height: 100%;
         width: 100%;
         flex-direction: column;
 }
@@ -22,18 +22,42 @@
     align-items: center;
 }
 
-.languageDropDown {
-    width: 100px;
-    color: rgba(9, 95, 208) !important;
-    background-color: rgba(9, 95, 208) !important;
+/* Style for the mat-menu */
+::ng-deep .custom-language-menu {
+    background-color: #83e80f;
+    /* Change background color */
+    border-radius: 8px;
+    /* Add border radius */
 }
 
-.flag {
-    width: 20px;
-    height: 14px;
-    margin-right: 8px;
-    vertical-align: middle;
+/* Style for the mat-menu-item */
+::ng-deep .custom-language-menu .mat-menu-item {
+    font-size: 15px;
+    /* Change font size */
+    padding: 10px 20px;
+    /* Adjust padding */
 }
+
+/* Style for the flag images */
+  .flag {
+    width: 24px;
+        /* Adjust width */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-right: 10px;
+        /* Add spacing between flag and text */
+    }
+    
+    /* Hover effect for mat-menu-item */
+    ::ng-deep .custom-language-menu .mat-menu-item:hover {
+        background-color: #e0e0e0;
+        /* Change background color on hover */
+    }
+    
+    /* Selected item style (optional, based on your logic) */
+    ::ng-deep .custom-language-menu .mat-menu-item.selected {
+        font-weight: bold;
+    }
 
 .spacer {
     flex: 1 1 auto;
@@ -60,11 +84,12 @@
 .router-outlet {
     flex: 1;
 }
+
 .footer {
     background-color: rgba(29, 28, 29, 0.944);
     padding: 20px 0;
     display: flex;
-        justify-content: center;
+    justify-content: center;
 }
 
 .footer-content {
@@ -72,6 +97,5 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-        justify-content: center;
-        /* Center content horizontally */
+    justify-content: center;
 }
