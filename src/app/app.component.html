@@ -1,44 +1,41 @@
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" closed>
-      <nav>
-        <a class="startBtn" routerLink="/login">
-          <mat-icon>login</mat-icon> {{ 'Start' | translate }}
-        </a>
-        <a class="startBtn" routerLink="/welcome">
-          <mat-icon>home</mat-icon> {{ 'Welcome' | translate }}
-        </a>
-        <a class="startBtn" routerLink="/intro">
-          <mat-icon>description</mat-icon> {{ 'Pictures' | translate }}
-        </a>
-        <a class="startBtn" routerLink="/register">
-          <mat-icon>person_add</mat-icon> {{ 'Registration' | translate }}
-        </a>
+<mat-toolbar class="custom-toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <a class="startBtn" routerLink="/welcome">{{ 'Welcome' | translate }}</a>
+  <span class="spacer"></span>
+  <a class="startBtn" routerLink="/intro">{{ 'Pictures' | translate }}</a>
+  <span class="spacer"></span>
+  <a class="startBtn" routerLink="/register">{{ 'Registration' | translate }}</a>
+  <mat-select class="languageDropDown" [(value)]="selectedLanguage" (selectionChange)="switchLanguage($event.value)">
+    <mat-option *ngFor="let language of languages" [value]="language.code">
+      <img [src]="language.flag" class="flag" />{{ language.code }}
+    </mat-option>
+  </mat-select>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" class="sidenav">
+    <nav>
+      <a class="startBtn" routerLink="/login" (click)="closeSidenav()">
+        <mat-icon>login</mat-icon> {{ 'Start' | translate }}
+      </a>
+      <a class="startBtn" routerLink="/welcome" (click)="closeSidenav()">
+        <mat-icon>home</mat-icon> {{ 'Welcome' | translate }}
+      </a>
+      <a class="startBtn" routerLink="/intro" (click)="closeSidenav()">
+        <mat-icon>description</mat-icon> {{ 'Pictures' | translate }}
+      </a>
+      <a class="startBtn" routerLink="/register" (click)="closeSidenav()">
+        <mat-icon>person_add</mat-icon> {{ 'Registration' | translate }}
+      </a>
       </nav>
-    </mat-sidenav>
-  
+      </mat-sidenav>
+  <mat-sidenav-content>
+<router-outlet></router-outlet>
     <mat-sidenav-content>
-      <mat-toolbar class="custom-toolbar">
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span class="spacer"></span>
-        <a class="startBtn" routerLink="/welcome">{{ 'Welcome' | translate }}
-        </a>
-        <span class="spacer"></span>
-        <a class="startBtn" routerLink="/intro">{{ 'Pictures' | translate }}
-        </a>
-        <span class="spacer"></span>
-        <a class="startBtn" routerLink="/register">{{ 'Registration' | translate }}
-        </a>
-        <mat-select class="languageDropDown" [(value)]="selectedLanguage" (selectionChange)="switchLanguage($event.value)">
-          <mat-option *ngFor="let language of languages" [value]="language.code">
-            <img [src]="language.flag" class="flag" />{{ language.code }}
-          </mat-option>
-        </mat-select>
-      </mat-toolbar>
-  
       <router-outlet></router-outlet>
-  
       <footer class="footer">
         <div class="container footer-content">
           <button mat-button routerLink="/impress" color="primary">
@@ -48,7 +45,6 @@
             (mouseleave)="showContactEmail = false">
             <mat-icon>mail</mat-icon> {{ 'Contact' | translate }}
           </button>
-          <!-- <button mat-button color="primary" (click)="openAgbDialog()"> -->
           <button mat-button color="primary" routerLink="/agb">
             <mat-icon>assignment</mat-icon> {{ 'Terms' | translate }}
           </button>
@@ -56,5 +52,4 @@
         </div>
       </footer>
     </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+    

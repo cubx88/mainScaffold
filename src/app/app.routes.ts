@@ -6,7 +6,6 @@ import { AgbComponent } from './agb/agb.component';
 import { IntroComponent } from './intro/intro.component';
 import { Routes } from '@angular/router';
 
-
 export const routesConf: Routes = [
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     { path: 'welcome', component: WelcomeComponent },
@@ -16,4 +15,3 @@ export const routesConf: Routes = [
     { path: 'agb', component: AgbComponent },
     { path: 'intro', component: IntroComponent }
 ];
-

@@ -4,15 +4,29 @@
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to right, rgba(9, 95, 208), rgb(237, 191, 5));
-    padding-bottom: 50px;
+    padding: 50px 20px;
+        box-sizing: border-box;
+    }
+    
+    .centered-form {
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        min-width: 400px;
+        /* Ensures the form doesn't shrink too much */
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 30px 0;
 }
 
 .full-width {
-    width: 80%;
+    width: 100%;
 }
 
 mat-form-field {
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -22,39 +36,54 @@ mat-error {
     font-size: 12px;
 }
 
-.contact-form {
-    max-width: 700px;
-    min-width: 100px;
-    padding: 0 30px;
-}
-
-.centered-form {
-    text-align: center;
-    width: 500px;
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    margin-top: 20px;
-}
-
 .blue-heading {
     padding: 30px;
     color: rgb(237, 191, 5);
 }
 
-.btn.btn-success {
-    margin-right: 30px;
-}
-
+.btn.btn-warning,
 .btn.btn-primary {
-    margin-left: 30px;
-    margin-right: 20px;
+    margin: 10px 5px;
+    /* Adjust button margins */
+    width: calc(50% - 10px);
+    /* Ensure buttons fit side by side with spacing */
 }
 
 @media (max-width: 1024px) {
-    .register-form {
-        max-width: 100%;
+    .centered-form {
+        padding: 15px;
+        }
+
+                                                                                                                                                                                                                                                                .btn.btn-warning,
+                                                                                                                                                                                                                                                                .btn.btn-primary {
+                                                                                                                                                                                                                                                                    margin: 10px 5px;
+                                                                                                                                                                                                                                                                    width: calc(50% - 10px);
+                                                                                                                                                                                                                                                                }
+}
+
+@media (max-width: 768px) {
+    .centered-form {
+        padding: 10px;
+    }
+
+                                                                                                                                                                                                                                                                .btn.btn-warning,
+                                                                                                                                                                                                                                                                .btn.btn-primary {
+        margin: 5px 2px;
+            width: calc(50% - 4px);
+        }
+}
+
+@media (max-width: 480px) {
+    .centered-form {
+        padding: 10px;
+        min-width: 100%;
+        /* Make sure form takes full width on very small screens */
+    }
+
+    .btn.btn-warning,
+    .btn.btn-primary {
+        width: 100%;
+        /* Stack buttons vertically on small screens */
+        margin: 5px 0;
     }
 }
