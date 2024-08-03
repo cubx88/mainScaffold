@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-impress',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './impress.component.html',
   styleUrl: './impress.component.css'
 })

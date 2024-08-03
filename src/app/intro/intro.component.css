@@ -1,0 +1,28 @@
+.hero-image {
+    background-image: url('../../assets/images/skateboard_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.example-card {
+    max-width: 400px;
+    margin: 20px;
+}

@@ -1,0 +1,18 @@
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(9, 95, 208), rgb(237, 191, 5));
+    padding-bottom: 50px;
+}
+
+.impressum-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+}

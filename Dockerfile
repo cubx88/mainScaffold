@@ -1,14 +1,16 @@
-# Use the official Node.js 20.x LTS image
-FROM node:20
-# Set the working directory in the container
-WORKDIR /app
-# Copy package.json and package-lock.json (if available)
+### STAGE 1: build ###
+FROM node:20 AS build
+
+WORKDIR /frenzelTech
 COPY package*.json ./
-# Install npm dependencies
 RUN npm install -g npm@10.5.0
-# Copy the rest of the application code
+RUN npm install -g @angular/cli@17
 COPY . .
-# Expose the port the app runs on
+RUN ng build
+
+### STAGE 2: Run ###
+FROM nginx:latest
+COPY default.conf /etc/nginx/conf.d/
+COPY --from=build /frenzelTech/dist/password-reset/browser /usr/share/nginx/html
 EXPOSE 8088
-# Start the application
-CMD ["npm", "start"]
+ENTRYPOINT ["nginx","-g","daemon off;"]

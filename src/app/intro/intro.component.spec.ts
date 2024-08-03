@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PwchangesuccessComponent } from './pwchangesuccess.component';
+import { IntroComponent } from './intro.component';
 
-describe('PwchangesuccessComponent', () => {
-  let component: PwchangesuccessComponent;
-  let fixture: ComponentFixture<PwchangesuccessComponent>;
+describe('IntroComponent', () => {
+  let component: IntroComponent;
+  let fixture: ComponentFixture<IntroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PwchangesuccessComponent]
+      imports: [IntroComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PwchangesuccessComponent);
+    fixture = TestBed.createComponent(IntroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

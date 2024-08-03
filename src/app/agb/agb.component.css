@@ -1,0 +1,47 @@
+.custom-container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(9, 95, 208), rgb(237, 191, 5));
+}
+
+.terms-box {
+    background: #ffffff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.terms-content {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.terms-content ul {
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin-bottom: 10px;
+}
+
+.contactBtn {
+    cursor: pointer;
+    color: rgba(9, 95, 208);
+    text-decoration: underline;
+}
+
+.contactBtn:hover {
+    color: green;
+}

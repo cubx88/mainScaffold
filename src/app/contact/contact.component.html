@@ -1,0 +1,49 @@
+<div class="custom-container">
+    <div class="contact-form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="centered-form">
+            <h2 class="blue-heading">Contact Us</h2>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput formControlName="username" placeholder="Please enter your full name"
+                        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+                    <mat-error *ngIf="submitted && f['username'].errors">
+                        <div *ngIf="f['username'].errors['required']">Full Name is required</div>
+                        <div *ngIf="f['username'].errors['minlength']">Please enter at least 10 characters</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Please enter your email"
+                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                    <mat-error *ngIf="submitted && f['email'].errors">
+                        <div *ngIf="f['email'].errors['required']">Email is required</div>
+                        <div *ngIf="f['email'].errors['email']">Please enter a valid email</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Leave a Message</mat-label>
+                    <textarea matInput formControlName="textmessage"
+                        placeholder="Please let us know how we can help you"
+                        [ngClass]="{ 'is-invalid': submitted && f['textmessage'].errors }"></textarea>
+                    <mat-error *ngIf="submitted && f['textmessage'].errors">
+                        <div *ngIf="f['textmessage'].errors['required']">Message is required</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="btn btn-warning" type="submit">Submit</button>
+                <button type="button" class="btn btn-primary" (click)="onReset()">Reset</button>
+            </div>
+
+        </form>
+    </div>
+</div>
