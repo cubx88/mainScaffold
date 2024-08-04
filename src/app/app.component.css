@@ -1,3 +1,23 @@
+::ng-deep .mat-mdc-menu-panel {
+    border-radius: 20px;
+    background: rgba(9, 95, 208) !important;
+}
+
+/* ::ng-deep .mat-mdc-menu-panel:hover {
+    color: rgba(9, 95, 208);
+    background: rgb(237, 191, 5) !important;
+} */
+
+.ng-tns-c1967311527-1 {
+    color: white;
+    background: rgba(9, 95, 208);
+    margin-top: 0;
+}
+
+.ng-tns-c1967311527-1:hover {
+    color: rgba(9, 95, 208);
+    background: rgb(237, 191, 5) !important;
+}
 .sidenav-container {
     display: flex;
     height: 100%;
@@ -22,7 +42,6 @@
     align-items: center;
 }
 
-/* Style for the flag images */
 .flag {
     width: 24px;
     /* Adjust width */

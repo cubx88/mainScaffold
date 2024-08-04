@@ -13,7 +13,7 @@
       <img *ngIf="selectedLanguage" [src]="currentFlag" class="flag" />
       {{ selectedLanguage }}
     </button>
-    <mat-menu #languageMenu="matMenu" class="custom-language-menu">
+    <mat-menu #languageMenu="matMenu">
       <button mat-menu-item *ngFor="let language of languages" (click)="switchLanguage(language.code)"
         [class.selected]="language.code === selectedLanguage">
         <img [src]="language.flag" class="flag" />{{ language.code }}
