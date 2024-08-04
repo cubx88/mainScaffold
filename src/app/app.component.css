@@ -1,7 +1,7 @@
 .sidenav-container {
     display: flex;
     height: 100%;
-        width: 100%;
+    width: 100%;
         flex-direction: column;
 }
 
@@ -22,41 +22,14 @@
     align-items: center;
 }
 
-/* Style for the mat-menu */
-::ng-deep .custom-language-menu {
-    background-color: #83e80f;
-    /* Change background color */
-    border-radius: 8px;
-    /* Add border radius */
-}
-
-/* Style for the mat-menu-item */
-::ng-deep .custom-language-menu .mat-menu-item {
-    font-size: 15px;
-    /* Change font size */
-    padding: 10px 20px;
-    /* Adjust padding */
-}
-
 /* Style for the flag images */
-  .flag {
+.flag {
     width: 24px;
-        /* Adjust width */
+    /* Adjust width */
         height: auto;
         /* Maintain aspect ratio */
         margin-right: 10px;
         /* Add spacing between flag and text */
-    }
-    
-    /* Hover effect for mat-menu-item */
-    ::ng-deep .custom-language-menu .mat-menu-item:hover {
-        background-color: #e0e0e0;
-        /* Change background color on hover */
-    }
-    
-    /* Selected item style (optional, based on your logic) */
-    ::ng-deep .custom-language-menu .mat-menu-item.selected {
-        font-weight: bold;
     }
 
 .spacer {
