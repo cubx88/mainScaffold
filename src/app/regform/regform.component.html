@@ -1,0 +1,94 @@
+<div class="custom-container">
+  <mat-card>
+    <mat-card-header class="center-header">
+      <mat-card-title class="mat-heading">{{ 'Registration' | translate }}</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistInpNamelbl' | translate }}</mat-label>
+          <input matInput formControlName="firstName" required [placeholder]="'RegistInpNameDesc2' | translate" />
+          <mat-error *ngIf="formControls['firstName'].hasError('required')">
+            {{ 'RegistInpFirstNameVal' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistInpSurNamelbl' | translate }}</mat-label>
+          <input matInput formControlName="lastName" [placeholder]="'RegistInpNameDesc' | translate" required>
+          <mat-error *ngIf="formControls['lastName'].hasError('required')">
+            {{ 'RegistInpSurNameVal' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistEmaillbl' | translate }}</mat-label>
+          <input matInput formControlName="email" [placeholder]="'RegistEmailDesc' | translate" required>
+          <mat-error *ngIf="formControls['email'].hasError('required')">
+            {{ 'RegistEmailVal' | translate }}
+          </mat-error>
+          <mat-error *ngIf="formControls['email'].hasError('invalidEmail')">
+            {{ 'RegistEmailVal2' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistInpPhonelbl' | translate }}</mat-label>
+          <input matInput formControlName="phoneNumber" [placeholder]="'RegistPhoneDesc' | translate" required>
+          <mat-error *ngIf="formControls['phoneNumber'].hasError('required')">
+            {{ 'RegistPhoneVal' | translate }}
+          </mat-error>
+          <mat-error *ngIf="formControls['phoneNumber'].hasError('pattern')">
+            {{ 'RegistPhoneVal2' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistPasswordlbl' | translate }}</mat-label>
+          <input matInput [type]="showPassword ? 'text' : 'password'" type="password" formControlName="password"
+            [placeholder]="'RegistPasswordDesc' | translate" required>
+          <button mat-icon-button matSuffix (click)="togglePasswordVisibility('password')">
+            <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="formControls['password'].hasError('required')">
+            {{ 'RegistPasswordVal' | translate }}
+          </mat-error>
+          <mat-error *ngIf="formControls['password'].hasError('minlength')">
+            {{ 'RegistPasswordVal2' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>{{ 'RegistConfPasswordlbl' | translate }}</mat-label>
+          <input matInput [type]="showConfirmPassword ? 'text' : 'password'" type="password"
+            formControlName="confirmPassword" [placeholder]="'RegistConfPasswordDesc' | translate" required>
+          <button mat-icon-button matSuffix (click)="togglePasswordVisibility('confirmPassword')">
+            <mat-icon>{{ showConfirmPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="formControls['confirmPassword'].hasError('required')">
+            {{ 'RegistConfPasswordVal' | translate }}
+          </mat-error>
+          <mat-error *ngIf="formControls['confirmPassword'].hasError('matching')">
+            {{ 'RegistConfPasswordVal2' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <mat-checkbox formControlName="acceptTerms">
+        {{ 'RegistTermlbl' | translate }}
+      </mat-checkbox>
+      <mat-error *ngIf="submitted && formControls['acceptTerms'].errors">
+        <div *ngIf="formControls['acceptTerms'].errors['required']">{{ 'RegistTermVal' | translate }}</div>
+      </mat-error>
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" class="btnSubmit">{{
+          'RegistSubmitBtn' | translate }}</button>
+        <button mat-raised-button color="warn" type="button" (click)="onReset()" class="btnReset">{{ 'RegistResetBtn' |
+          translate }}</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

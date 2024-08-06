@@ -7,7 +7,7 @@
   <span class="spacer"></span>
   <a class="startBtn" routerLink="/intro">{{ 'Pictures' | translate }}</a>
   <span class="spacer"></span>
-  <a class="startBtn" routerLink="/register">{{ 'Registration' | translate }}</a>
+  <a class="startBtn" routerLink="/regform">{{ 'Registration' | translate }}</a>
   <ng-container *ngIf="languages">
     <button mat-button [matMenuTriggerFor]="languageMenu" class="languageDropDown">
       <img *ngIf="selectedLanguage" [src]="currentFlag" class="flag" />
@@ -25,9 +25,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over" class="sidenav">
     <nav>
-      <!-- <a class="startBtn" routerLink="/login" (click)="closeSidenav()">
-        <mat-icon>login</mat-icon> {{ 'Start' | translate }}
-      </a> -->
       <a class="startBtn" routerLink="/welcome" (click)="closeSidenav()">
         <mat-icon>home</mat-icon> {{ 'Welcome' | translate }}
       </a>

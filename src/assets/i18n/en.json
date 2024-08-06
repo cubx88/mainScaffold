@@ -33,5 +33,9 @@
   "RegistTermlbl":"I have read and agree to the Terms",
   "RegistTermVal":"Accept Terms is required",
   "RegistSubmitBtn":"Submit",
-  "RegistResetBtn":"Reset"
+  "RegistResetBtn":"Reset",
+  "RegistInpPhonelbl":"Phone",
+  "RegistPhoneDesc":"Enter your phone number",
+  "RegistPhoneVal":"Phone number is required",
+  "RegistPhoneVal2":"Phone number is invalid"
 }

@@ -1,0 +1,78 @@
+.center-header {
+  display: flex;
+  justify-content: center;
+}
+.mat-heading {
+  color: rgb(237, 191, 5);
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+.custom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(9, 95, 208), rgb(237, 191, 5));
+  padding-bottom: 50px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;  
+  align-items: stretch;  
+  margin-bottom: 20px;
+  width: 500;
+}
+
+
+
+.form-field {
+  flex: 1 0 calc(50% - 10px); /* Calculate the correct basis after margin */
+  margin-right: 20px; /* Adjust spacing between fields */
+}
+
+.form-row .form-field:nth-child(2n) {
+  margin-right: 0; /* Remove margin for every second field */
+}
+
+
+mat-card {
+  margin-top: 50px;
+  width: 800px; 
+  padding: 20px; /* Padding inside the card */
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
+  display: flex; /* Ensures flex layout to accommodate internal flex behavior */
+  flex-direction: column; /* Stack children vertically */
+  border-radius: 10px;
+}
+
+
+
+.btnSubmit {
+  margin-right: 20px;
+}
+
+.btnReset {
+  margin-left: 20px;
+}
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+mat-checkbox{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .form-field {
+    flex-basis: 100%; /* Full width for smaller devices */
+    margin-right: 0; /* Remove margin on smaller screens */
+  }
+}
+

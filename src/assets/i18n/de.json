@@ -33,6 +33,10 @@
     "RegistTermlbl":"Ich habe die AGB's gelesen und stimme zu",
     "RegistTermVal":"AGB's sind Pflicht",
     "RegistSubmitBtn":"Senden",
-    "RegistResetBtn":"Zurücksetzen"
+    "RegistResetBtn":"Zurücksetzen",
+    "RegistInpPhonelbl":"Telefon",
+    "RegistPhoneDesc":"Geben Sie Ihre Telefonnumer ein",
+    "RegistPhoneVal":"Telefonnummer ist Pflicht",
+    "RegistPhoneVal2":"Telefonnummer ist ungültig"
   }
   
