@@ -41,7 +41,8 @@
 mat-card {
   margin-top: 50px;
   width: 800px; 
-  padding: 20px; /* Padding inside the card */
+  padding: 50px;
+    /* Padding inside the card */
   box-sizing: border-box; /* Includes padding and border in the width calculation */
   display: flex; /* Ensures flex layout to accommodate internal flex behavior */
   flex-direction: column; /* Stack children vertically */
