@@ -2,8 +2,8 @@
 version: "2.12"
 services:
   web:
-    container_name: passwordresetcnt
-    build: /frenzelTech
-    image: passwordresetui:8
+    container_name: frenzeltechcnt
+    build: /mainScaffold
+    image: frenzeltechui:8
     ports:
       - 8088:80
