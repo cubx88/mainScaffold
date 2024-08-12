@@ -3,10 +3,6 @@
     background: rgba(9, 95, 208) !important;
 }
 
-/* ::ng-deep .mat-mdc-menu-panel:hover {
-    color: rgba(9, 95, 208);
-    background: rgb(237, 191, 5) !important;
-} */
 ::ng-deep .mdc-button__label {
     color: white;
     font-size: 16px;
@@ -27,11 +23,16 @@
     display: flex;
     height: 100%;
     width: 100%;
-        flex-direction: column;
+    flex-direction: column;
+    overflow-x: hidden;
+        /* Ensure no overflow in x direction */
 }
 
 .sidenav {
-    width: 220px;
+    width: 100%;
+        /* Adjusted to 100% to fit smaller screens */
+        max-width: 220px;
+        /* Max width for larger screens */
     background-color: rgb(237, 191, 5);
 }
 
@@ -45,16 +46,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+        /* Ensures wrapping on smaller screens */
+        overflow-x: hidden;
+        /* Prevents overflow */
 }
 
 .flag {
     width: 24px;
-    /* Adjust width */
-        height: auto;
-        /* Maintain aspect ratio */
-        margin-right: 10px;
-        /* Add spacing between flag and text */
-    }
+    height: auto;
+    margin-right: 10px;
+}
 
 .spacer {
     flex: 1 1 auto;
@@ -67,6 +69,8 @@
     text-decoration: none;
     color: white;
     font-size: 15px;
+    flex-shrink: 0;
+        /* Prevents shrinking on smaller screens */
 }
 
 .startBtn mat-icon {
@@ -87,6 +91,8 @@
     padding: 20px 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+        /* Allows wrapping of footer content */
 }
 
 .footer-content {
@@ -95,4 +101,18 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+}
+/* Media queries for responsive adjustments */
+@media (max-width: 600px) {
+    .custom-toolbar {
+        height: auto;
+        /* Adjust height to content */
+        padding: 10px;
+    }
+
+    .startBtn {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+        padding: 12px;
+    }
 }

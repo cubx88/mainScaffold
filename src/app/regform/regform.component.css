@@ -29,7 +29,7 @@
 
 
 .form-field {
-  flex: 1 0 calc(50% - 10px); /* Calculate the correct basis after margin */
+  flex: 1 0 calc(50% - 10px);
   margin-right: 20px; /* Adjust spacing between fields */
 }
 
@@ -40,16 +40,13 @@
 
 mat-card {
   margin-top: 50px;
-  width: 800px; 
+  min-width: 200px;
+    max-width: 600px;
   padding: 50px;
-    /* Padding inside the card */
-  box-sizing: border-box; /* Includes padding and border in the width calculation */
-  display: flex; /* Ensures flex layout to accommodate internal flex behavior */
+  box-sizing: border-box;
   flex-direction: column; /* Stack children vertically */
   border-radius: 10px;
 }
-
-
 
 .btnSubmit {
   margin-right: 20px;
@@ -76,4 +73,3 @@ mat-checkbox{
     margin-right: 0; /* Remove margin on smaller screens */
   }
 }
-
